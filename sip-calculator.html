@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIP Wealth Calculator | Mutual Fund Returns & Growth</title>
+  <meta name="description" content="Calculate returns on mutual fund monthly SIP investments with compound growth charts. 100% free financial tool.">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    header { background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+    .input-group { margin-bottom: 18px; }
+    .input-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .input-val-display { color: var(--primary); font-weight: 800; font-size: 1.1rem; }
+    input[type='range'] { width: 100%; accent-color: var(--primary); height: 6px; border-radius: 4px; outline: none; cursor: pointer; }
+    input[type='number'], select { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-top: 6px; }
+    input[type='number']:focus, select:focus { border-color: var(--primary); }
+    .results-card { margin-top: 24px; background: #0f172a; border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+    .res-item { background: var(--card-bg); padding: 14px; border-radius: 8px; border: 1px solid var(--border); }
+    .res-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; font-weight: 600; }
+    .res-value { font-size: 1.3rem; font-weight: 800; color: #fff; }
+    .res-highlight { grid-column: span 2; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.4); }
+    .res-highlight .res-value { color: #34d399; font-size: 1.6rem; }
+    .progress-bar-wrap { background: #334155; border-radius: 999px; height: 12px; overflow: hidden; display: flex; margin-top: 14px; }
+    .p-invested { background: #3b82f6; height: 100%; }
+    .p-returns { background: #10b981; height: 100%; }
+    .p-legend { display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 6px; color: var(--text-muted); }
+    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #34d399; }
+    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
+    .info-card li { margin-bottom: 6px; }
+    .home-link { display: inline-flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 0.85rem; text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+    .home-link:hover { color: #34d399; }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="badge">📈 100% Free • Compound Wealth Calculator</div>
+    <h1>SIP & Mutual Fund Calculator</h1>
+    <p>Calculate your maturity corpus and capital gains on monthly Systematic Investment Plans.</p>
+  </header>
+  <div class="container">
+    <a href="index.html" class="home-link">← Back to FastTools Hub</a>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <div class="tool-box">
+      <div class="input-group">
+        <div class="input-row">
+          <label>Monthly Investment</label>
+          <span class="input-val-display" id="amtDisplay">₹10,000</span>
+        </div>
+        <input type="range" id="amtRange" min="500" max="100000" step="500" value="10000" oninput="calculate()">
+        <input type="number" id="amtInput" value="10000" min="500" max="1000000" oninput="syncInput('amt')">
+      </div>
+      <div class="input-group">
+        <div class="input-row">
+          <label>Expected Annual Return Rate (%)</label>
+          <span class="input-val-display" id="rateDisplay">12%</span>
+        </div>
+        <input type="range" id="rateRange" min="1" max="30" step="0.5" value="12" oninput="calculate()">
+        <input type="number" id="rateInput" value="12" min="1" max="50" step="0.5" oninput="syncInput('rate')">
+      </div>
+      <div class="input-group">
+        <div class="input-row">
+          <label>Time Period (Years)</label>
+          <span class="input-val-display" id="yearsDisplay">10 Years</span>
+        </div>
+        <input type="range" id="yearsRange" min="1" max="40" step="1" value="10" oninput="calculate()">
+        <input type="number" id="yearsInput" value="10" min="1" max="50" oninput="syncInput('years')">
+      </div>
+      <div class="results-card">
+        <div class="res-grid">
+          <div class="res-item">
+            <div class="res-label">Total Amount Invested</div>
+            <div class="res-value" id="investedVal">₹12,00,000</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Estimated Wealth Gain</div>
+            <div class="res-value" id="returnsVal" style="color:#34d399;">₹11,23,391</div>
+          </div>
+          <div class="res-item res-highlight">
+            <div class="res-label">Total Expected Maturity Value</div>
+            <div class="res-value" id="totalVal">₹23,23,391</div>
+          </div>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="p-invested" id="pInvested" style="width: 51%;"></div>
+          <div class="p-returns" id="pReturns" style="width: 49%;"></div>
+        </div>
+        <div class="p-legend">
+          <span>🔵 Invested: <strong id="investedPct">51%</strong></span>
+          <span>🟢 Gains: <strong id="returnsPct">49%</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>💡 What is the SIP Compound Effect?</h3>
+      <ul>
+        <li><strong>Rupee Cost Averaging:</strong> You buy more mutual fund units when markets drop, reducing average purchase cost.</li>
+        <li><strong>The 8-4-3 Rule of Compounding:</strong> Your first ₹1 Crore takes the longest, but your next ₹1 Crore compounds in a fraction of that time.</li>
+        <li><strong>Zero Risk of Timing:</strong> Regular monthly discipline beats trying to predict daily market highs and lows.</li>
+      </ul>
+    </div>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
+  </div>
+  <script>
+    function fmt(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+    function syncInput(type) {
+      const val = parseFloat(document.getElementById(type + 'Input').value) || 0;
+      document.getElementById(type + 'Range').value = val;
+      calculate();
+    }
+    function calculate() {
+      const P = parseFloat(document.getElementById('amtRange').value);
+      const r = parseFloat(document.getElementById('rateRange').value);
+      const y = parseFloat(document.getElementById('yearsRange').value);
+      document.getElementById('amtInput').value = P;
+      document.getElementById('rateInput').value = r;
+      document.getElementById('yearsInput').value = y;
+      document.getElementById('amtDisplay').innerText = fmt(P);
+      document.getElementById('rateDisplay').innerText = r + '%';
+      document.getElementById('yearsDisplay').innerText = y + (y === 1 ? ' Year' : ' Years');
+      const n = y * 12;
+      const i = (r / 100) / 12;
+      const totalAmount = P * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+      const totalInvested = P * n;
+      const returns = totalAmount - totalInvested;
+      document.getElementById('investedVal').innerText = fmt(totalInvested);
+      document.getElementById('returnsVal').innerText = fmt(returns);
+      document.getElementById('totalVal').innerText = fmt(totalAmount);
+      const invPct = Math.round((totalInvested / totalAmount) * 100);
+      const retPct = 100 - invPct;
+      document.getElementById('pInvested').style.width = invPct + '%';
+      document.getElementById('pReturns').style.width = retPct + '%';
+      document.getElementById('investedPct').innerText = invPct + '%';
+      document.getElementById('returnsPct').innerText = retPct + '%';
+    }
+    calculate();
+  </script>
+</body>
+</html>
