@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator (New vs Old Regime) | FY 2024-25 & 2025-26</title>
+  <meta name="description" content="Calculate and compare Income Tax under New and Old Tax Regimes with Section 87A rebate and 80C deductions.">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    header { background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+    .input-group { margin-bottom: 18px; }
+    .input-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .input-val-display { color: var(--primary); font-weight: 800; font-size: 1.1rem; }
+    input[type='range'] { width: 100%; accent-color: var(--primary); height: 6px; border-radius: 4px; outline: none; cursor: pointer; }
+    input[type='number'], select { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-top: 6px; }
+    input[type='number']:focus, select:focus { border-color: var(--primary); }
+    .results-card { margin-top: 24px; background: #0f172a; border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+    .res-item { background: var(--card-bg); padding: 14px; border-radius: 8px; border: 1px solid var(--border); }
+    .res-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; font-weight: 600; }
+    .res-value { font-size: 1.3rem; font-weight: 800; color: #fff; }
+    .res-highlight { grid-column: span 2; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.4); }
+    .res-highlight .res-value { color: #34d399; font-size: 1.6rem; }
+    .progress-bar-wrap { background: #334155; border-radius: 999px; height: 12px; overflow: hidden; display: flex; margin-top: 14px; }
+    .p-invested { background: #3b82f6; height: 100%; }
+    .p-returns { background: #10b981; height: 100%; }
+    .p-legend { display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 6px; color: var(--text-muted); }
+    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #34d399; }
+    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
+    .info-card li { margin-bottom: 6px; }
+    .home-link { display: inline-flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 0.85rem; text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+    .home-link:hover { color: #34d399; }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="badge">⚖️ 100% Free • Budget 2024-25 Updated</div>
+    <h1>Income Tax Calculator</h1>
+    <p>Compare New Tax Regime vs Old Tax Regime to find out where you save the most money.</p>
+  </header>
+  <div class="container">
+    <a href="index.html" class="home-link">← Back to FastTools Hub</a>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <div class="tool-box">
+      <div class="input-group">
+        <label>Annual Gross Salary / Income (₹)</label>
+        <input type="number" id="income" value="950000" min="0" step="10000" oninput="calculateTax()">
+      </div>
+      <div class="input-group">
+        <label>Section 80C Deductions (PF, ELSS, LIC, PPF) [Old Regime]</label>
+        <input type="number" id="sec80c" value="150000" max="150000" min="0" step="5000" oninput="calculateTax()">
+      </div>
+      <div class="input-group">
+        <label>Section 80D (Health Insurance) & Other Exemptions [Old Regime]</label>
+        <input type="number" id="sec80d" value="25000" min="0" step="5000" oninput="calculateTax()">
+      </div>
+      <div class="results-card">
+        <div class="res-grid">
+          <div class="res-item">
+            <div class="res-label">New Regime Tax (₹75k Std Ded)</div>
+            <div class="res-value" id="newTax" style="color:#60a5fa;">₹0</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Old Regime Tax (Deductions)</div>
+            <div class="res-value" id="oldTax" style="color:#f59e0b;">₹0</div>
+          </div>
+          <div class="res-item res-highlight">
+            <div class="res-label" id="recommendationLabel">Recommended Tax Regime</div>
+            <div class="res-value" id="recommendationVal" style="font-size:1.3rem;">Calculating...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>📋 Key Rules to Remember</h3>
+      <ul>
+        <li><strong>New Tax Regime:</strong> Income up to <strong>₹7.75 Lakhs</strong> is effectively 100% tax-free thanks to the ₹75,000 standard deduction and Section 87A rebate!</li>
+        <li><strong>Old Tax Regime:</strong> Useful only if you have massive deductions (> ₹3.75 Lakhs total across 80C, 80D, and Home Loan interest).</li>
+        <li><strong>Surcharge & Cess:</strong> 4% Health & Education cess is automatically included in our calculations.</li>
+      </ul>
+    </div>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
+  </div>
+  <script>
+    function fmt(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+    function calculateTax() {
+      const income = parseFloat(document.getElementById('income').value) || 0;
+      const c80 = Math.min(150000, parseFloat(document.getElementById('sec80c').value) || 0);
+      const d80 = parseFloat(document.getElementById('sec80d').value) || 0;
+      
+      // New Regime: 75,000 standard deduction
+      const taxableNew = Math.max(0, income - 75000);
+      let newTax = 0;
+      if (taxableNew <= 700000) {
+        newTax = 0; // 87A rebate
+      } else {
+        let rem = taxableNew;
+        if (rem > 300000) {
+          let b1 = Math.min(rem - 300000, 400000);
+          newTax += b1 * 0.05;
+        }
+        if (rem > 700000) {
+          let b2 = Math.min(rem - 700000, 300000);
+          newTax += b2 * 0.10;
+        }
+        if (rem > 1000000) {
+          let b3 = Math.min(rem - 1000000, 200000);
+          newTax += b3 * 0.15;
+        }
+        if (rem > 1200000) {
+          let b4 = Math.min(rem - 1200000, 300000);
+          newTax += b4 * 0.20;
+        }
+        if (rem > 1500000) {
+          newTax += (rem - 1500000) * 0.30;
+        }
+        newTax *= 1.04; // 4% Cess
+      }
+
+      // Old Regime: 50,000 standard deduction + 80C + 80D
+      const taxableOld = Math.max(0, income - 50000 - c80 - d80);
+      let oldTax = 0;
+      if (taxableOld <= 500000) {
+        oldTax = 0; // 87A rebate
+      } else {
+        let rem = taxableOld;
+        if (rem > 250000) {
+          let b1 = Math.min(rem - 250000, 250000);
+          oldTax += b1 * 0.05;
+        }
+        if (rem > 500000) {
+          let b2 = Math.min(rem - 500000, 500000);
+          oldTax += b2 * 0.20;
+        }
+        if (rem > 1000000) {
+          oldTax += (rem - 1000000) * 0.30;
+        }
+        oldTax *= 1.04;
+      }
+
+      document.getElementById('newTax').innerText = fmt(newTax);
+      document.getElementById('oldTax').innerText = fmt(oldTax);
+      
+      const diff = Math.abs(newTax - oldTax);
+      if (newTax < oldTax) {
+        document.getElementById('recommendationVal').innerHTML = '✅ Choose <strong>New Regime</strong> (You save ' + fmt(diff) + ')';
+      } else if (oldTax < newTax) {
+        document.getElementById('recommendationVal').innerHTML = '✅ Choose <strong>Old Regime</strong> (You save ' + fmt(diff) + ')';
+      } else {
+        document.getElementById('recommendationVal').innerText = '🤝 Both Regimes have identical tax liability';
+      }
+    }
+    calculateTax();
+  </script>
+</body>
+</html>
