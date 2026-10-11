@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPF Calculator | Public Provident Fund 15-Year Tax-Free Growth</title>
+  <meta name="description" content="Calculate returns and maturity value for government-backed Public Provident Fund (PPF) at current 7.1% interest.">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    header { background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+    .input-group { margin-bottom: 18px; }
+    .input-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .input-val-display { color: var(--primary); font-weight: 800; font-size: 1.1rem; }
+    input[type='range'] { width: 100%; accent-color: var(--primary); height: 6px; border-radius: 4px; outline: none; cursor: pointer; }
+    input[type='number'], select { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-top: 6px; }
+    input[type='number']:focus, select:focus { border-color: var(--primary); }
+    .results-card { margin-top: 24px; background: #0f172a; border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+    .res-item { background: var(--card-bg); padding: 14px; border-radius: 8px; border: 1px solid var(--border); }
+    .res-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; font-weight: 600; }
+    .res-value { font-size: 1.3rem; font-weight: 800; color: #fff; }
+    .res-highlight { grid-column: span 2; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.4); }
+    .res-highlight .res-value { color: #34d399; font-size: 1.6rem; }
+    .progress-bar-wrap { background: #334155; border-radius: 999px; height: 12px; overflow: hidden; display: flex; margin-top: 14px; }
+    .p-invested { background: #3b82f6; height: 100%; }
+    .p-returns { background: #10b981; height: 100%; }
+    .p-legend { display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 6px; color: var(--text-muted); }
+    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #34d399; }
+    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
+    .info-card li { margin-bottom: 6px; }
+    .home-link { display: inline-flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 0.85rem; text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+    .home-link:hover { color: #34d399; }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="badge">🛡️ 100% Free • Sovereign Guaranteed • EEE Status</div>
+    <h1>Public Provident Fund (PPF) Calculator</h1>
+    <p>Calculate your guaranteed 15-year wealth accumulation under India's sovereign EEE tax-free scheme.</p>
+  </header>
+  <div class="container">
+    <a href="index.html" class="home-link">← Back to FastTools Hub</a>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <div class="tool-box">
+      <div class="input-group">
+        <div class="input-row">
+          <label>Yearly Deposit Amount (Max ₹1.5 Lakhs)</label>
+          <span class="input-val-display" id="amtDisplay">₹1,50,000</span>
+        </div>
+        <input type="range" id="amtRange" min="500" max="150000" step="500" value="150000" oninput="calculatePPF()">
+        <input type="number" id="amtInput" value="150000" min="500" max="150000" oninput="sync('amt')">
+      </div>
+      <div class="input-group">
+        <div class="input-row">
+          <label>Current Interest Rate (% Govt Benchmark)</label>
+          <span class="input-val-display">7.1%</span>
+        </div>
+        <input type="number" id="rateInput" value="7.1" readonly style="opacity:0.8; cursor:not-allowed;">
+      </div>
+      <div class="input-group">
+        <div class="input-row">
+          <label>Tenure (Years)</label>
+          <span class="input-val-display" id="yearsDisplay">15 Years (Standard)</span>
+        </div>
+        <select id="tenureSelect" onchange="calculatePPF()">
+          <option value="15">15 Years (Mandatory Lock-in)</option>
+          <option value="20">20 Years (1 Block Extension)</option>
+          <option value="25">25 Years (2 Block Extensions)</option>
+        </select>
+      </div>
+      <div class="results-card">
+        <div class="res-grid">
+          <div class="res-item">
+            <div class="res-label">Total Deposits Made</div>
+            <div class="res-value" id="depositsVal">₹22,50,000</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Total Tax-Free Interest</div>
+            <div class="res-value" id="interestVal" style="color:#34d399;">₹18,18,209</div>
+          </div>
+          <div class="res-item res-highlight">
+            <div class="res-label">Total Maturity Amount (100% Tax-Free)</div>
+            <div class="res-value" id="maturityVal">₹40,68,209</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>🌟 What is the EEE Tax Advantage?</h3>
+      <ul>
+        <li><strong>Exempt-Exempt-Exempt:</strong> Deposits qualify for Section 80C rebate, interest earned is 100% tax-free, and maturity amount has ZERO tax!</li>
+        <li><strong>Deposit Rule:</strong> Always deposit before the <strong>5th of the month</strong> to earn interest for that entire calendar month.</li>
+      </ul>
+    </div>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
+  </div>
+  <script>
+    function fmt(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+    function sync(type) {
+      const val = parseFloat(document.getElementById(type + 'Input').value) || 0;
+      document.getElementById(type + 'Range').value = val;
+      calculatePPF();
+    }
+    function calculatePPF() {
+      const P = parseFloat(document.getElementById('amtRange').value);
+      const r = 0.071;
+      const y = parseInt(document.getElementById('tenureSelect').value);
+      document.getElementById('amtInput').value = P;
+      document.getElementById('amtDisplay').innerText = fmt(P);
+      document.getElementById('yearsDisplay').innerText = y + ' Years';
+
+      let balance = 0;
+      let totalDeposit = 0;
+      for (let i = 1; i <= y; i++) {
+        totalDeposit += P;
+        balance = (balance + P) * (1 + r);
+      }
+      const interest = balance - totalDeposit;
+      document.getElementById('depositsVal').innerText = fmt(totalDeposit);
+      document.getElementById('interestVal').innerText = fmt(interest);
+      document.getElementById('maturityVal').innerText = fmt(balance);
+    }
+    calculatePPF();
+  </script>
+</body>
+</html>
