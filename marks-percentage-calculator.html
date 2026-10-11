@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Marks & Percentage Calculator | Grade & Division</title>
+  <meta name="description" content="Calculate exam marks percentages, CBSE/state board grades, and shopping discount savings instantly.">
+  <style>
+    
+    :root {
+      --primary: #8b5cf6;
+      --primary-hover: #7c3aed;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #38bdf8;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    header { background: linear-gradient(135deg, #4c1d95 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+    .badge { display: inline-block; background: rgba(139, 92, 246, 0.2); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+    textarea, input[type='text'], input[type='number'], select { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-bottom: 14px; }
+    textarea:focus, input:focus, select:focus { border-color: var(--primary); }
+    .btn { background: var(--primary); color: #fff; border: none; padding: 12px 18px; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .btn-secondary { background: #334155; color: #cbd5e1; }
+    .btn-secondary:hover { background: #475569; }
+    .btn-success { background: var(--success); }
+    .btn-success:hover { background: #059669; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .home-link { display: inline-flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 0.85rem; text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+    .home-link:hover { color: #c084fc; }
+    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #c084fc; }
+    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
+    .info-card li { margin-bottom: 6px; }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+
+    .res-box { background: #0f172a; border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; margin-top: 18px; }
+    .res-score { font-size: 2.5rem; font-weight: 800; color: #c084fc; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">📊 100% Free • Academic & Daily Math</div>
+    <h1>Exam Marks & Percentage Calculator</h1>
+    <p>Calculate your academic test score percentage, division grade, and discount savings.</p>
+  </header>
+  <div class="container">
+    <a href="index.html" class="home-link">← Back to FastTools Hub</a>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <div class="tool-box">
+      <div class="input-group">
+        <label>Marks Obtained</label>
+        <input type="number" id="obtained" value="485" min="0" oninput="calcMarks()">
+      </div>
+      <div class="input-group">
+        <label>Maximum Total Marks</label>
+        <input type="number" id="totalMarks" value="600" min="1" oninput="calcMarks()">
+      </div>
+      <div class="res-box">
+        <div style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase;">Overall Percentage</div>
+        <div class="res-score" id="pctVal">80.83%</div>
+        <div id="gradeBadge" style="margin-top:8px; font-weight:700; color:#34d399;">Distinction / 1st Division</div>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>🎓 Standard Grading Matrix</h3>
+      <ul>
+        <li><strong>75% and Above:</strong> First Class with Distinction</li>
+        <li><strong>60% to 74.9%:</strong> First Division (1st Class)</li>
+        <li><strong>50% to 59.9%:</strong> Second Division (2nd Class)</li>
+        <li><strong>35% to 49.9%:</strong> Third Division (Pass Class)</li>
+      </ul>
+    </div>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
+  </div>
+  <script>
+    function calcMarks() {
+      const obt = parseFloat(document.getElementById('obtained').value) || 0;
+      const tot = parseFloat(document.getElementById('totalMarks').value) || 1;
+      const pct = (obt / tot) * 100;
+      document.getElementById('pctVal').innerText = pct.toFixed(2) + '%';
+      let grade = '';
+      let color = '#34d399';
+      if (pct >= 75) { grade = '🏆 First Class with Distinction'; color = '#34d399'; }
+      else if (pct >= 60) { grade = '🥇 First Division (1st Class)'; color = '#60a5fa'; }
+      else if (pct >= 50) { grade = '🥈 Second Division (2nd Class)'; color = '#f59e0b'; }
+      else if (pct >= 35) { grade = '🥉 Third Division (Pass)'; color = '#fbbf24'; }
+      else { grade = '⚠️ Needs Improvement (< 35%)'; color = '#ef4444'; }
+      const gb = document.getElementById('gradeBadge');
+      gb.innerText = grade;
+      gb.style.color = color;
+    }
+    calcMarks();
+  </script>
+</body>
+</html>
