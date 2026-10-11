@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1-Page Fresher Resume & Biodata Maker | Print-Ready Clean PDF</title>
+  <meta name="description" content="Create a clean, professional 1-page resume or biodata for freshers and job applicants. 100% free, downloads clean printable PDF.">
+  <style>
+    
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --success: #10b981;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+header { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+.badge { display: inline-block; background: rgba(37, 99, 235, 0.2); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.container { max-width: 680px; margin: 0 auto; padding: 16px; }
+.ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+.tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+input[type="text"], input[type="number"], input[type="date"], select, textarea {
+  width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-bottom: 14px;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--primary); }
+.btn { background: var(--primary); color: #fff; border: none; padding: 14px 20px; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; width: 100%; transition: background 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
+.btn:hover { background: var(--primary-hover); }
+.btn-success { background: var(--success); }
+.btn-success:hover { background: #059669; }
+.result-box { display: none; margin-top: 20px; background: #0f172a; border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; }
+.result-box.show { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.other-tools { margin-top: 30px; text-align: center; }
+.other-tools h4 { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+.tools-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.tool-link { background: #1e293b; border: 1px solid var(--border); color: #94a3b8; padding: 8px 14px; border-radius: 8px; font-size: 0.85rem; text-decoration: none; }
+.tool-link:hover { color: #fff; border-color: var(--primary); }
+footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+
+    @media print {
+      body { background: #fff !important; color: #000 !important; padding: 0 !important; }
+      header, .ad-slot, .other-tools, footer, .btn-print, .input-form { display: none !important; }
+      .resume-preview { display: block !important; border: none !important; box-shadow: none !important; color: #000 !important; background: #fff !important; width: 100% !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">⚡ 100% Free • Print-Ready 1-Page PDF • No Sign-up</div>
+    <h1>1-Page Fresher Resume & Biodata Maker</h1>
+    <p>Fill out simple details and generate a clean, ATS-friendly 1-page resume ready to download or print.</p>
+  </header>
+  <div class="container">
+    <div class="ad-slot"><span>Sponsored Advertisement Space</span></div>
+    <div class="tool-box input-form">
+      <label>Full Name:</label><input type="text" id="rName" placeholder="e.g. Rahul Sharma">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <div><label>Email:</label><input type="text" id="rEmail" placeholder="rahul@example.com"></div>
+        <div><label>Phone:</label><input type="text" id="rPhone" placeholder="+91 9876543210"></div>
+      </div>
+      <label>City & State:</label><input type="text" id="rCity" placeholder="New Delhi, India">
+      <label>Career Objective / Summary:</label><textarea id="rObj" rows="2" placeholder="Motivated graduate seeking an entry-level opportunity..."></textarea>
+      <label>Education (Degree, College, Year, Percentage/CGPA):</label><textarea id="rEdu" rows="2" placeholder="B.Tech Computer Science | ABC College (2022-2026) | 8.2 CGPA"></textarea>
+      <label>Key Skills:</label><input type="text" id="rSkills" placeholder="Python, Web Development, Problem Solving, Communication">
+      <button class="btn btn-success" onclick="generateResume()">⚡ Generate Resume Preview</button>
+    </div>
+    <div id="previewCard" class="tool-box resume-preview" style="display:none; margin-top:20px; background:#fff; color:#0f172a; padding:30px; border-radius:8px;">
+      <h2 id="pName" style="color:#0f172a; margin-bottom:4px;">-</h2>
+      <p id="pContact" style="color:#64748b; font-size:0.85rem; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:8px;"></p>
+      <h4 style="color:#2563eb; margin-top:12px;">OBJECTIVE</h4>
+      <p id="pObj" style="font-size:0.9rem; margin-top:4px;"></p>
+      <h4 style="color:#2563eb; margin-top:14px;">EDUCATION</h4>
+      <p id="pEdu" style="font-size:0.9rem; margin-top:4px;"></p>
+      <h4 style="color:#2563eb; margin-top:14px;">SKILLS</h4>
+      <p id="pSkills" style="font-size:0.9rem; margin-top:4px;"></p>
+      <button class="btn btn-print" style="margin-top:20px;" onclick="window.print()">🖨️ Print or Save as PDF</button>
+    </div>
+    <div class="ad-slot" style="margin-top: 24px;"><span>Sponsored Advertisement Space</span></div>
+    
+<div class="other-tools">
+  <h4>More Free FastTools:</h4>
+  <div class="tools-links">
+    <a href="sarkari-photo-resizer.html" class="tool-link">📷 Photo Resizer (20-50KB)</a>
+    <a href="sarkari-signature-resizer.html" class="tool-link">✍️ Signature Resizer (Under 20KB)</a>
+    <a href="sarkari-age-calculator.html" class="tool-link">📅 Govt Age Calculator</a>
+    <a href="whatsapp-direct-chat.html" class="tool-link">💬 WhatsApp Direct</a>
+    <a href="instant-upi-qr.html" class="tool-link">💳 Instant UPI QR</a>
+    <a href="youtube-thumbnail-downloader.html" class="tool-link">🎬 YouTube Thumbnails</a>
+    <a href="cgpa-to-percentage.html" class="tool-link">🎓 CGPA to %</a>
+    <a href="essay-word-counter.html" class="tool-link">📝 Word Counter</a>
+    <a href="simple-biodata-maker.html" class="tool-link">📄 Fresher Resume Maker</a>
+    <a href="image-to-pdf-converter.html" class="tool-link">📑 Image to PDF</a>
+    <a href="index.html" class="tool-link">🏠 Hub Directory</a>
+  </div>
+</div>
+
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Freshers</p></footer>
+  </div>
+  <script>
+    function generateResume() {
+      const name = document.getElementById('rName').value.trim() || 'Candidate Name';
+      const email = document.getElementById('rEmail').value.trim();
+      const phone = document.getElementById('rPhone').value.trim();
+      const city = document.getElementById('rCity').value.trim();
+      document.getElementById('pName').innerText = name;
+      document.getElementById('pContact').innerText = [email, phone, city].filter(Boolean).join(' • ');
+      document.getElementById('pObj').innerText = document.getElementById('rObj').value.trim() || 'Seeking entry-level opportunities to contribute and learn.';
+      document.getElementById('pEdu').innerText = document.getElementById('rEdu').value.trim() || 'Degree details';
+      document.getElementById('pSkills').innerText = document.getElementById('rSkills').value.trim() || 'Technical & Soft Skills';
+      document.getElementById('previewCard').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
