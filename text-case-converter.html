@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Case Converter | UPPERCASE, lowercase, Title & Slug</title>
+  <meta name="description" content="Instant text case converter: sentence case, UPPERCASE, lowercase, Title Case, camelCase, snake_case and URL slug maker.">
+  <style>
+    
+    :root {
+      --primary: #8b5cf6;
+      --primary-hover: #7c3aed;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #38bdf8;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    header { background: linear-gradient(135deg, #4c1d95 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+    .badge { display: inline-block; background: rgba(139, 92, 246, 0.2); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+    textarea, input[type='text'], input[type='number'], select { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-bottom: 14px; }
+    textarea:focus, input:focus, select:focus { border-color: var(--primary); }
+    .btn { background: var(--primary); color: #fff; border: none; padding: 12px 18px; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .btn-secondary { background: #334155; color: #cbd5e1; }
+    .btn-secondary:hover { background: #475569; }
+    .btn-success { background: var(--success); }
+    .btn-success:hover { background: #059669; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .home-link { display: inline-flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 0.85rem; text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+    .home-link:hover { color: #c084fc; }
+    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #c084fc; }
+    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
+    .info-card li { margin-bottom: 6px; }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+
+    .stats-badge { display: inline-block; background: #0f172a; border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; color: #94a3b8; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">🔤 100% Free • Text Manipulation Suite</div>
+    <h1>Text Case Converter</h1>
+    <p>Convert any text between UPPERCASE, lowercase, Title Case, camelCase, and clean URL slugs.</p>
+  </header>
+  <div class="container">
+    <a href="index.html" class="home-link">← Back to FastTools Hub</a>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <div class="tool-box">
+      <div class="stats-badge" id="stats">Characters: 0 • Words: 0 • Lines: 0</div>
+      <textarea id="inputText" rows="7" placeholder="Type or paste your text here..." oninput="updateStats()"></textarea>
+      <div class="btn-row">
+        <button class="btn" onclick="transform('upper')">UPPERCASE</button>
+        <button class="btn" onclick="transform('lower')">lowercase</button>
+        <button class="btn" onclick="transform('title')">Title Case</button>
+        <button class="btn" onclick="transform('sentence')">Sentence case</button>
+        <button class="btn btn-secondary" onclick="transform('camel')">camelCase</button>
+        <button class="btn btn-secondary" onclick="transform('snake')">snake_case</button>
+        <button class="btn btn-secondary" onclick="transform('kebab')">kebab-case</button>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-success" onclick="copyText()">📋 Copy Result</button>
+        <button class="btn btn-secondary" onclick="clearText()">Clear</button>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>🚀 Supported Formats</h3>
+      <ul>
+        <li><strong>Title Case:</strong> Capitalizes the first letter of each major word (ideal for headlines).</li>
+        <li><strong>camelCase & snake_case:</strong> Formats programming identifiers and database column names.</li>
+        <li><strong>Sentence Case:</strong> Capitalizes the initial letter of every sentence automatically.</li>
+      </ul>
+    </div>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
+  </div>
+  <script>
+    function updateStats() {
+      const val = document.getElementById('inputText').value;
+      const chars = val.length;
+      const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+      const lines = val ? val.split(/\r\n|\r|\n/).length : 0;
+      document.getElementById('stats').innerText = 'Characters: ' + chars + ' • Words: ' + words + ' • Lines: ' + lines;
+    }
+    function transform(type) {
+      const el = document.getElementById('inputText');
+      let text = el.value;
+      if (!text) return;
+      if (type === 'upper') text = text.toUpperCase();
+      else if (type === 'lower') text = text.toLowerCase();
+      else if (type === 'sentence') {
+        text = text.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, c => c.toUpperCase());
+      } else if (type === 'title') {
+        text = text.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+      } else if (type === 'camel') {
+        text = text.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+      } else if (type === 'snake') {
+        text = text.toLowerCase().trim().replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+      } else if (type === 'kebab') {
+        text = text.toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '');
+      }
+      el.value = text;
+      updateStats();
+    }
+    function copyText() {
+      const el = document.getElementById('inputText');
+      navigator.clipboard.writeText(el.value).then(() => alert('Copied to clipboard!'));
+    }
+    function clearText() {
+      document.getElementById('inputText').value = '';
+      updateStats();
+    }
+  </script>
+</body>
+</html>
