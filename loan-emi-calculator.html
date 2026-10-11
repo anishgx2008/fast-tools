@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan EMI Calculator | Home, Car & Personal Loan Monthly Schedule</title>
+  <meta name="description" content="Calculate monthly EMI, interest, and total repayment for Home, Car, Education, and Personal Loans. Free online financial tool.">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    header { background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+    .input-group { margin-bottom: 18px; }
+    .input-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .input-val-display { color: var(--primary); font-weight: 800; font-size: 1.1rem; }
+    input[type='range'] { width: 100%; accent-color: var(--primary); height: 6px; border-radius: 4px; outline: none; cursor: pointer; }
+    input[type='number'], select { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-top: 6px; }
+    input[type='number']:focus, select:focus { border-color: var(--primary); }
+    .results-card { margin-top: 24px; background: #0f172a; border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+    .res-item { background: var(--card-bg); padding: 14px; border-radius: 8px; border: 1px solid var(--border); }
+    .res-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; font-weight: 600; }
+    .res-value { font-size: 1.3rem; font-weight: 800; color: #fff; }
+    .res-highlight { grid-column: span 2; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.4); }
+    .res-highlight .res-value { color: #34d399; font-size: 1.6rem; }
+    .progress-bar-wrap { background: #334155; border-radius: 999px; height: 12px; overflow: hidden; display: flex; margin-top: 14px; }
+    .p-invested { background: #3b82f6; height: 100%; }
+    .p-returns { background: #10b981; height: 100%; }
+    .p-legend { display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 6px; color: var(--text-muted); }
+    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #34d399; }
+    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
+    .info-card li { margin-bottom: 6px; }
+    .home-link { display: inline-flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 0.85rem; text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+    .home-link:hover { color: #34d399; }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="badge">🏠 100% Free • EMI & Interest Breakdown</div>
+    <h1>Loan EMI Calculator</h1>
+    <p>Calculate your monthly installment, total interest payable, and overall loan repayment cost.</p>
+  </header>
+  <div class="container">
+    <a href="index.html" class="home-link">← Back to FastTools Hub</a>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <div class="tool-box">
+      <div class="input-group">
+        <div class="input-row">
+          <label>Loan Amount (Principal)</label>
+          <span class="input-val-display" id="loanDisplay">₹25,00,000</span>
+        </div>
+        <input type="range" id="loanRange" min="50000" max="10000000" step="50000" value="2500000" oninput="calculateEMI()">
+        <input type="number" id="loanInput" value="2500000" min="10000" max="50000000" oninput="sync('loan')">
+      </div>
+      <div class="input-group">
+        <div class="input-row">
+          <label>Interest Rate (% per annum)</label>
+          <span class="input-val-display" id="rateDisplay">8.5%</span>
+        </div>
+        <input type="range" id="rateRange" min="5" max="25" step="0.25" value="8.5" oninput="calculateEMI()">
+        <input type="number" id="rateInput" value="8.5" min="1" max="35" step="0.1" oninput="sync('rate')">
+      </div>
+      <div class="input-group">
+        <div class="input-row">
+          <label>Loan Tenure (Years)</label>
+          <span class="input-val-display" id="tenureDisplay">20 Years</span>
+        </div>
+        <input type="range" id="tenureRange" min="1" max="30" step="1" value="20" oninput="calculateEMI()">
+        <input type="number" id="tenureInput" value="20" min="1" max="35" oninput="sync('tenure')">
+      </div>
+      <div class="results-card">
+        <div class="res-grid">
+          <div class="res-item res-highlight">
+            <div class="res-label">Monthly EMI Payable</div>
+            <div class="res-value" id="emiVal">₹21,696</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Total Principal Borrowed</div>
+            <div class="res-value" id="principalVal">₹25,00,000</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Total Interest Payable</div>
+            <div class="res-value" id="interestVal" style="color:#f59e0b;">₹27,07,040</div>
+          </div>
+          <div class="res-item" style="grid-column: span 2;">
+            <div class="res-label">Total Payment (Principal + Interest)</div>
+            <div class="res-value" id="totalPaymentVal">₹52,07,040</div>
+          </div>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="p-invested" id="pPrincipal" style="width: 48%;"></div>
+          <div class="p-returns" id="pInterest" style="width: 52%; background:#f59e0b;"></div>
+        </div>
+        <div class="p-legend">
+          <span>🔵 Principal: <strong id="principalPct">48%</strong></span>
+          <span>🟠 Interest: <strong id="interestPct">52%</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>💡 Smart Loan Payoff Tip</h3>
+      <ul>
+        <li><strong>Prepayment Power:</strong> Paying just <strong>1 extra EMI per year</strong> on a 20-year home loan can reduce your loan tenure by up to <strong>4 years</strong> and save lakhs of rupees in interest!</li>
+      </ul>
+    </div>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
+  </div>
+  <script>
+    function fmt(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+    function sync(type) {
+      const val = parseFloat(document.getElementById(type + 'Input').value) || 0;
+      document.getElementById(type + 'Range').value = val;
+      calculateEMI();
+    }
+    function calculateEMI() {
+      const P = parseFloat(document.getElementById('loanRange').value);
+      const rAnnual = parseFloat(document.getElementById('rateRange').value);
+      const y = parseFloat(document.getElementById('tenureRange').value);
+      document.getElementById('loanInput').value = P;
+      document.getElementById('rateInput').value = rAnnual;
+      document.getElementById('tenureInput').value = y;
+      document.getElementById('loanDisplay').innerText = fmt(P);
+      document.getElementById('rateDisplay').innerText = rAnnual + '%';
+      document.getElementById('tenureDisplay').innerText = y + (y === 1 ? ' Year' : ' Years');
+      const n = y * 12;
+      const r = (rAnnual / 100) / 12;
+      const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      const totalPayment = emi * n;
+      const totalInterest = totalPayment - P;
+      document.getElementById('emiVal').innerText = fmt(emi);
+      document.getElementById('principalVal').innerText = fmt(P);
+      document.getElementById('interestVal').innerText = fmt(totalInterest);
+      document.getElementById('totalPaymentVal').innerText = fmt(totalPayment);
+      const prinPct = Math.round((P / totalPayment) * 100);
+      const intPct = 100 - prinPct;
+      document.getElementById('pPrincipal').style.width = prinPct + '%';
+      document.getElementById('pInterest').style.width = intPct + '%';
+      document.getElementById('principalPct').innerText = prinPct + '%';
+      document.getElementById('interestPct').innerText = intPct + '%';
+    }
+    calculateEMI();
+  </script>
+</body>
+</html>
