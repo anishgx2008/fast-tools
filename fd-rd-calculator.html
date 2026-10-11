@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed Deposit (FD) & RD Calculator | Bank Interest & Maturity</title>
+  <meta name="description" content="Calculate returns and interest on Bank Fixed Deposits (FD) and Recurring Deposits (RD) with senior citizen rates.">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    header { background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+    .badge { display: inline-block; background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+    .input-group { margin-bottom: 18px; }
+    .input-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .input-val-display { color: var(--primary); font-weight: 800; font-size: 1.1rem; }
+    input[type='range'] { width: 100%; accent-color: var(--primary); height: 6px; border-radius: 4px; outline: none; cursor: pointer; }
+    input[type='number'], select { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-top: 6px; }
+    input[type='number']:focus, select:focus { border-color: var(--primary); }
+    .results-card { margin-top: 24px; background: #0f172a; border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+    .res-item { background: var(--card-bg); padding: 14px; border-radius: 8px; border: 1px solid var(--border); }
+    .res-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; font-weight: 600; }
+    .res-value { font-size: 1.3rem; font-weight: 800; color: #fff; }
+    .res-highlight { grid-column: span 2; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.4); }
+    .res-highlight .res-value { color: #34d399; font-size: 1.6rem; }
+    .progress-bar-wrap { background: #334155; border-radius: 999px; height: 12px; overflow: hidden; display: flex; margin-top: 14px; }
+    .p-invested { background: #3b82f6; height: 100%; }
+    .p-returns { background: #10b981; height: 100%; }
+    .p-legend { display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 6px; color: var(--text-muted); }
+    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #34d399; }
+    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
+    .info-card li { margin-bottom: 6px; }
+    .home-link { display: inline-flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 0.85rem; text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+    .home-link:hover { color: #34d399; }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="badge">🏦 100% Free • Bank Compound Interest</div>
+    <h1>Bank FD & RD Calculator</h1>
+    <p>Calculate maturity value, total interest earned, and quarterly compounding for Bank FDs.</p>
+  </header>
+  <div class="container">
+    <a href="index.html" class="home-link">← Back to FastTools Hub</a>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <div class="tool-box">
+      <div class="input-group">
+        <label>Deposit Type</label>
+        <select id="depType" onchange="calculateFD()">
+          <option value="fd">Fixed Deposit (One-Time Lump Sum)</option>
+          <option value="rd">Recurring Deposit (Monthly Installment)</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <div class="input-row">
+          <label id="depositLabel">Deposit Amount</label>
+          <span class="input-val-display" id="amtDisplay">₹1,00,000</span>
+        </div>
+        <input type="number" id="amtInput" value="100000" min="1000" step="5000" oninput="calculateFD()">
+      </div>
+      <div class="input-group">
+        <div class="input-row">
+          <label>Interest Rate (% per annum)</label>
+          <span class="input-val-display" id="rateDisplay">7.1%</span>
+        </div>
+        <input type="number" id="rateInput" value="7.1" min="1" max="15" step="0.1" oninput="calculateFD()">
+      </div>
+      <div class="input-group">
+        <div class="input-row">
+          <label>Tenure (Years)</label>
+          <span class="input-val-display" id="tenureDisplay">3 Years</span>
+        </div>
+        <input type="number" id="tenureInput" value="3" min="1" max="20" oninput="calculateFD()">
+      </div>
+      <div class="results-card">
+        <div class="res-grid">
+          <div class="res-item">
+            <div class="res-label">Total Principal Deposited</div>
+            <div class="res-value" id="principalVal">₹1,00,000</div>
+          </div>
+          <div class="res-item">
+            <div class="res-label">Total Interest Earned</div>
+            <div class="res-value" id="interestVal" style="color:#34d399;">₹23,546</div>
+          </div>
+          <div class="res-item res-highlight">
+            <div class="res-label">Total Maturity Value</div>
+            <div class="res-value" id="maturityVal">₹1,23,546</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>📌 Bank FD Facts</h3>
+      <ul>
+        <li><strong>Quarterly Compounding:</strong> Indian commercial banks compound interest every 3 months (quarterly), which yields higher returns than simple interest.</li>
+        <li><strong>Senior Citizens:</strong> Senior citizens usually receive an extra <strong>+0.50%</strong> higher interest rate across most Indian banks.</li>
+      </ul>
+    </div>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
+  </div>
+  <script>
+    function fmt(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+    function calculateFD() {
+      const type = document.getElementById('depType').value;
+      const P = parseFloat(document.getElementById('amtInput').value) || 0;
+      const r = (parseFloat(document.getElementById('rateInput').value) || 0) / 100;
+      const t = parseFloat(document.getElementById('tenureInput').value) || 0;
+      
+      document.getElementById('depositLabel').innerText = (type === 'fd') ? 'Total Deposit (Lump Sum)' : 'Monthly Deposit Amount';
+      document.getElementById('amtDisplay').innerText = fmt(P);
+      document.getElementById('rateDisplay').innerText = (r * 100).toFixed(1) + '%';
+      document.getElementById('tenureDisplay').innerText = t + (t === 1 ? ' Year' : ' Years');
+
+      let totalDeposit = 0;
+      let maturity = 0;
+      if (type === 'fd') {
+        // Quarterly compounding: A = P * (1 + r/4)^(4*t)
+        totalDeposit = P;
+        maturity = P * Math.pow(1 + (r / 4), 4 * t);
+      } else {
+        // RD formula: M = sum over i=1..n of P*(1 + r/4)^(4*(n-i+1)/12)
+        const n = t * 12;
+        totalDeposit = P * n;
+        maturity = 0;
+        for (let i = 1; i <= n; i++) {
+          const quarters = (n - i + 1) / 3;
+          maturity += P * Math.pow(1 + (r / 4), quarters);
+        }
+      }
+      const interest = maturity - totalDeposit;
+      document.getElementById('principalVal').innerText = fmt(totalDeposit);
+      document.getElementById('interestVal').innerText = fmt(interest);
+      document.getElementById('maturityVal').innerText = fmt(maturity);
+    }
+    calculateFD();
+  </script>
+</body>
+</html>
