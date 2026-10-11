@@ -3,151 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarkari Exam Photo Resizer (20KB - 50KB) | Free Online Compressor</title>
-  <meta name="description" content="Resize passport photos to exact 20KB to 50KB for SSC, UPSC, Railway RRB, and Police exam forms. 100% free, runs client-side on mobile.">
+  <title>FastTools Hub - 100% Free Daily Utility & Student Tools</title>
+  <meta name="description" content="All-in-one free web utility suite: Sarkari exam photo resizer (20KB-50KB), age calculator, WhatsApp direct, UPI QR generator, and PDF tools.">
   <style>
-    :root {
-      --primary: #2563eb;
-      --bg: #0f172a;
-      --card-bg: #1e293b;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --border: #334155;
-      --success: #10b981;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
-    header { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
-    .badge { display: inline-block; background: rgba(37, 99, 235, 0.2); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
-    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
-    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
-    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
-    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
-    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
-    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
-    .presets { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 20px; }
-    .preset-btn { background: #0f172a; border: 1px solid var(--border); color: #cbd5e1; padding: 10px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; text-align: center; transition: all 0.2s ease; }
-    .preset-btn:hover, .preset-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
-    .upload-zone { border: 2px dashed var(--border); border-radius: 12px; padding: 30px 20px; text-align: center; cursor: pointer; background: #0f172a; margin-bottom: 20px; transition: border 0.2s ease; }
-    .upload-zone:hover { border-color: var(--primary); }
-    .upload-zone p { color: var(--text-muted); font-size: 0.85rem; margin-top: 6px; }
-    input[type='file'] { display: none; }
-    .size-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
-    input[type='number'] { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 10px 12px; border-radius: 8px; font-size: 0.95rem; outline: none; }
-    input[type='number']:focus { border-color: var(--primary); }
-    .btn { background: var(--primary); color: #fff; border: none; padding: 14px 20px; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; width: 100%; transition: background 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
-    .btn:hover { background: #1d4ed8; }
-    .btn-download { background: var(--success); margin-top: 16px; }
-    .btn-download:hover { background: #059669; }
-    .result-section { display: none; margin-top: 24px; background: #0f172a; border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; }
-    .result-section.show { display: block; }
-    .preview-box img { max-width: 100%; max-height: 280px; border-radius: 8px; margin: 14px auto; border: 2px solid var(--border); display: block; }
-    .status-badge { display: inline-block; background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 6px 14px; border-radius: 6px; font-weight: 800; font-size: 0.95rem; }
-    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
-    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #60a5fa; }
-    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
-    .info-card li { margin-bottom: 6px; }
-    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+    
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --success: #10b981;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+header { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+.badge { display: inline-block; background: rgba(37, 99, 235, 0.2); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.container { max-width: 680px; margin: 0 auto; padding: 16px; }
+.ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+.tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+input[type="text"], input[type="number"], input[type="date"], select, textarea {
+  width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-bottom: 14px;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--primary); }
+.btn { background: var(--primary); color: #fff; border: none; padding: 14px 20px; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; width: 100%; transition: background 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
+.btn:hover { background: var(--primary-hover); }
+.btn-success { background: var(--success); }
+.btn-success:hover { background: #059669; }
+.other-tools { margin-top: 30px; text-align: center; }
+.other-tools h4 { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+.tools-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.tool-link { background: #1e293b; border: 1px solid var(--border); color: #94a3b8; padding: 8px 14px; border-radius: 8px; font-size: 0.85rem; text-decoration: none; }
+.tool-link:hover { color: #fff; border-color: var(--primary); }
+footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+
+    .grid-hub { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 20px; }
+    .hub-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-decoration: none; color: var(--text); transition: all 0.2s ease; display: block; }
+    .hub-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: 0 8px 16px -4px rgba(37, 99, 235, 0.2); }
+    .hub-icon { font-size: 2rem; margin-bottom: 8px; }
+    .hub-title { font-size: 1.15rem; font-weight: 700; color: #f8fafc; margin-bottom: 6px; }
+    .hub-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
   </style>
 </head>
 <body>
   <header>
-    <div class="badge">⚡ 100% Free • Works Offline on Mobile</div>
-    <h1>Sarkari Exam Photo Resizer (20KB - 50KB)</h1>
-    <p>Fast passport photo compressor for SSC, UPSC, Railway RRB, and Police recruitment forms.</p>
+    <div class="badge">⚡ 100% Free • No Sign-up • Fast Client-Side Processing</div>
+    <h1>FastTools All-in-One Utility Hub</h1>
+    <p>A suite of 10 free, lightweight digital utilities designed for students, job applicants, and creators.</p>
   </header>
-  <div class="container">
-    <div id="adsterra-banner-top" class="ad-slot">
-      <!-- Adsterra 728x90 / Banner Placement -->
-      <span>Sponsored Advertisement Space</span>
+  <div class="container" style="max-width: 900px;">
+    <div class="ad-slot"><span>Sponsored Advertisement Space</span></div>
+    <div class="grid-hub">
+      <a href="sarkari-photo-resizer.html" class="hub-card">
+        <div class="hub-icon">📷</div>
+        <div class="hub-title">Sarkari Photo Resizer</div>
+        <div class="hub-desc">Auto-fits passport photos to exact 20KB–50KB for SSC, UPSC, Railway, and Police exam forms.</div>
+      </a>
+      <a href="sarkari-signature-resizer.html" class="hub-card">
+        <div class="hub-icon">✍️</div>
+        <div class="hub-title">Sarkari Signature Resizer</div>
+        <div class="hub-desc">Compresses signatures under 20KB with high contrast black/blue ink clarity.</div>
+      </a>
+      <a href="sarkari-age-calculator.html" class="hub-card">
+        <div class="hub-icon">📅</div>
+        <div class="hub-title">Govt Exam Age Calculator</div>
+        <div class="hub-desc">Calculate exact age in Years, Months, and Days as on the official notification cutoff date.</div>
+      </a>
+      <a href="whatsapp-direct-chat.html" class="hub-card">
+        <div class="hub-icon">💬</div>
+        <div class="hub-title">WhatsApp Direct Message</div>
+        <div class="hub-desc">Message any WhatsApp number directly without saving them into phone contacts.</div>
+      </a>
+      <a href="instant-upi-qr.html" class="hub-card">
+        <div class="hub-icon">💳</div>
+        <div class="hub-title">Instant UPI QR Generator</div>
+        <div class="hub-desc">Create printable UPI payment QR codes for GPay, PhonePe, and Paytm with custom amounts.</div>
+      </a>
+      <a href="youtube-thumbnail-downloader.html" class="hub-card">
+        <div class="hub-icon">🎬</div>
+        <div class="hub-title">YouTube HD Thumbnail Grabber</div>
+        <div class="hub-desc">Download original 1080p full resolution thumbnails from any YouTube video.</div>
+      </a>
+      <a href="cgpa-to-percentage.html" class="hub-card">
+        <div class="hub-icon">🎓</div>
+        <div class="hub-title">CGPA to % Calculator</div>
+        <div class="hub-desc">Official university conversion formulas for CBSE, VTU, Mumbai Univ, KTU, and Anna Univ.</div>
+      </a>
+      <a href="essay-word-counter.html" class="hub-card">
+        <div class="hub-icon">📝</div>
+        <div class="hub-title">Live Essay Word Counter</div>
+        <div class="hub-desc">Live word count, character limits, reading time, and stats for applications and essays.</div>
+      </a>
+      <a href="simple-biodata-maker.html" class="hub-card">
+        <div class="hub-icon">📄</div>
+        <div class="hub-title">Fresher Resume Maker</div>
+        <div class="hub-desc">Clean 1-page resume and biodata generator ready to print or save as PDF.</div>
+      </a>
+      <a href="image-to-pdf-converter.html" class="hub-card">
+        <div class="hub-icon">📑</div>
+        <div class="hub-title">Image to PDF Converter</div>
+        <div class="hub-desc">Batch combine camera photos and document scans into a single PDF without watermarks.</div>
+      </a>
     </div>
-    <div class="tool-box">
-      <label>Step 1: Choose Your Exam Preset</label>
-      <div class="presets">
-        <button class="preset-btn active" onclick="setPreset(20, 50, 350, 450, this)">SSC Exam (20KB - 50KB)</button>
-        <button class="preset-btn" onclick="setPreset(20, 100, 350, 450, this)">UPSC Photo (20KB - 100KB)</button>
-        <button class="preset-btn" onclick="setPreset(20, 50, 240, 320, this)">Railway NTPC / Group D</button>
-        <button class="preset-btn" onclick="setPreset(10, 50, 300, 300, this)">State Police Bharti</button>
-      </div>
-      <label>Step 2: Upload Your Photo</label>
-      <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
-        <span style="font-size: 2.2rem;">📷</span>
-        <h3 id="uploadTitle" style="font-size: 1.05rem; margin-top: 6px;">Tap to Select Photo from Phone</h3>
-        <p>Supports JPG, JPEG, and PNG files</p>
-        <input type="file" id="fileInput" accept="image/*" onchange="handleFileSelect(event)">
-      </div>
-      <div class="size-controls">
-        <div><label>Min Target Size (KB):</label><input type="number" id="minKbInput" value="20"></div>
-        <div><label>Max Target Size (KB):</label><input type="number" id="maxKbInput" value="50"></div>
-      </div>
-      <button class="btn" onclick="startCompression()">⚡ Resize & Compress Photo Now</button>
-      <div id="resultBox" class="result-section">
-        <div class="status-badge" id="sizeBadge">✓ Form-Ready: 35 KB</div>
-        <div class="preview-box"><img id="previewImg" alt="Passport Photo"></div>
-        <a id="downloadBtn" class="btn btn-download" download="sarkari_photo_20to50kb.jpg">📥 Download Form-Ready Photo</a>
-      </div>
-    </div>
-    <div class="info-card">
-      <h3>📋 Official Govt Exam Photo Guidelines:</h3>
-      <ul>
-        <li><strong>SSC (CGL, CHSL, GD, MTS):</strong> Photo size must be strictly between 20.0 KB and 50.0 KB in JPEG format with 3.5 cm × 4.5 cm dimensions.</li>
-        <li><strong>UPSC (Civil Services, NDA, CDS):</strong> Photo size between 20 KB and 300 KB, clear face without cap/goggles.</li>
-        <li><strong>Railway Recruitment Board (RRB):</strong> Size between 20 KB and 50 KB, light background.</li>
-        <li><strong>Privacy Guaranteed:</strong> Your photo never leaves your browser. Processing runs 100% locally on your device.</li>
-      </ul>
-    </div>
-    <div id="adsterra-banner-bottom" class="ad-slot" style="margin-top: 24px;">
-      <!-- Adsterra 300x250 Banner Placement -->
-      <span>Sponsored Advertisement Space</span>
-    </div>
-    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Indian Students</p></footer>
+    <div class="ad-slot" style="margin-top: 30px;"><span>Sponsored Advertisement Space</span></div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
   </div>
-  <script>
-    let uploadedImage = null, targetW = 350, targetH = 450;
-    function setPreset(min, max, w, h, btn) {
-      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('minKbInput').value = min;
-      document.getElementById('maxKbInput').value = max;
-      targetW = w; targetH = h;
-    }
-    function handleFileSelect(e) {
-      const file = e.target.files[0];
-      if (!file) return;
-      document.getElementById('uploadTitle').innerText = file.name + ' (' + Math.round(file.size / 1024) + ' KB)';
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        uploadedImage = new Image();
-        uploadedImage.onload = function() { startCompression(); };
-        uploadedImage.src = evt.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
-    function startCompression() {
-      if (!uploadedImage) { alert('Please select a photo first!'); return; }
-      const minKb = parseFloat(document.getElementById('minKbInput').value) || 20;
-      const maxKb = parseFloat(document.getElementById('maxKbInput').value) || 50;
-      const canvas = document.createElement('canvas');
-      canvas.width = targetW; canvas.height = targetH;
-      const ctx = canvas.getContext('2d');
-      ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, targetW, targetH);
-      ctx.drawImage(uploadedImage, 0, 0, targetW, targetH);
-      let low = 0.05, high = 0.98, bestData = null, bestSize = 0;
-      for (let i = 0; i < 9; i++) {
-        let mid = (low + high) / 2;
-        let dataUrl = canvas.toDataURL('image/jpeg', mid);
-        let head = 'data:image/jpeg;base64,';
-        let sizeKb = Math.round((dataUrl.length - head.length) * 3 / 4 / 1024);
-        bestData = dataUrl; bestSize = sizeKb;
-        if (sizeKb > maxKb) high = mid;
-        else if (sizeKb < minKb) low = mid;
-        else break;
-      }
-      document.getElementById('previewImg').src = bestData;
-      document.getElementById('downloadBtn').href = bestData;
-      document.getElementById('sizeBadge').innerText = '✓ Form-Ready: ' + bestSize + ' KB';
-      document.getElementById('resultBox').classList.add('show');
-    }
-  </script>
 </body>
 </html>
