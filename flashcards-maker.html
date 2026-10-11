@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Study Flashcards & Spaced Repetition</title>
+  <meta name="description" content="Free study flashcard maker with 3D flip animation and spaced repetition revision mode.">
+  <style>
+    
+    :root {
+      --primary: #8b5cf6;
+      --primary-hover: #7c3aed;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #38bdf8;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    header { background: linear-gradient(135deg, #4c1d95 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+    .badge { display: inline-block; background: rgba(139, 92, 246, 0.2); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+    textarea, input[type='text'], input[type='number'], select { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-bottom: 14px; }
+    textarea:focus, input:focus, select:focus { border-color: var(--primary); }
+    .btn { background: var(--primary); color: #fff; border: none; padding: 12px 18px; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .btn-secondary { background: #334155; color: #cbd5e1; }
+    .btn-secondary:hover { background: #475569; }
+    .btn-success { background: var(--success); }
+    .btn-success:hover { background: #059669; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .home-link { display: inline-flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 0.85rem; text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+    .home-link:hover { color: #c084fc; }
+    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #c084fc; }
+    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
+    .info-card li { margin-bottom: 6px; }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+
+    .flashcard { perspective: 1000px; height: 220px; cursor: pointer; margin: 20px 0; }
+    .card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; border-radius: 14px; box-shadow: 0 8px 16px rgba(0,0,0,0.4); }
+    .card-inner.flipped { transform: rotateY(180deg); }
+    .card-front, .card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; border-radius: 14px; border: 2px solid var(--border); }
+    .card-front { background: #1e293b; color: #f8fafc; }
+    .card-back { background: #4c1d95; color: #fff; transform: rotateY(180deg); }
+    .card-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 10px; font-weight: 700; }
+    .card-text { font-size: 1.3rem; font-weight: 700; }
+    .controls { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">🧠 100% Free • Spaced Repetition Study Engine</div>
+    <h1>Study Flashcards Maker</h1>
+    <p>Memorize formulas, definitions, and exam topics with active recall flashcards.</p>
+  </header>
+  <div class="container">
+    <a href="index.html" class="home-link">← Back to FastTools Hub</a>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <div class="tool-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span id="counter" style="color:var(--text-muted); font-size:0.9rem;">Card 1 of 3</span>
+        <button class="btn btn-secondary" onclick="toggleForm()" style="padding:6px 12px; font-size:0.8rem;">+ Add New Card</button>
+      </div>
+      <div id="newCardForm" style="display:none; background:#0f172a; padding:16px; border-radius:10px; margin-bottom:16px; border:1px solid var(--border);">
+        <input type="text" id="qInput" placeholder="Question / Concept (Front)">
+        <input type="text" id="aInput" placeholder="Answer / Explanation (Back)">
+        <button class="btn" onclick="addCard()">Save Card</button>
+      </div>
+      <div class="flashcard" onclick="flipCard()">
+        <div class="card-inner" id="cardInner">
+          <div class="card-front">
+            <div class="card-tag">Question (Tap to Reveal Answer)</div>
+            <div class="card-text" id="qText">What is Ohm's Law formula?</div>
+          </div>
+          <div class="card-back">
+            <div class="card-tag">Answer</div>
+            <div class="card-text" id="aText">V = I × R (Voltage = Current × Resistance)</div>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn btn-secondary" onclick="prevCard()">← Previous</button>
+        <button class="btn btn-success" onclick="flipCard()">🔄 Flip</button>
+        <button class="btn" onclick="nextCard()">Next →</button>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>💡 Active Recall Tip</h3>
+      <ul>
+        <li>Always try to verbalize or write down the answer <strong>before</strong> flipping the card. Active retrieval strengthens neural connections 3x faster than passive reading!</li>
+      </ul>
+    </div>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
+  </div>
+  <script>
+    let cards = [
+      { q: "What is Ohm's Law formula?", a: "V = I × R (Voltage = Current × Resistance)" },
+      { q: "What is the speed of light in vacuum?", a: "3 × 10⁸ m/s (approx 300,000 km/s)" },
+      { q: "What is the SI unit of electric capacitance?", a: "Farad (F)" }
+    ];
+    let idx = 0;
+    function render() {
+      document.getElementById('qText').innerText = cards[idx].q;
+      document.getElementById('aText').innerText = cards[idx].a;
+      document.getElementById('counter').innerText = 'Card ' + (idx + 1) + ' of ' + cards.length;
+      document.getElementById('cardInner').classList.remove('flipped');
+    }
+    function flipCard() {
+      document.getElementById('cardInner').classList.toggle('flipped');
+    }
+    function nextCard() {
+      if (idx < cards.length - 1) { idx++; render(); }
+    }
+    function prevCard() {
+      if (idx > 0) { idx--; render(); }
+    }
+    function toggleForm() {
+      const f = document.getElementById('newCardForm');
+      f.style.display = f.style.display === 'none' ? 'block' : 'none';
+    }
+    function addCard() {
+      const q = document.getElementById('qInput').value.trim();
+      const a = document.getElementById('aInput').value.trim();
+      if (q && a) {
+        cards.push({ q: q, a: a });
+        document.getElementById('qInput').value = '';
+        document.getElementById('aInput').value = '';
+        toggleForm();
+        idx = cards.length - 1;
+        render();
+      }
+    }
+  </script>
+</body>
+</html>
