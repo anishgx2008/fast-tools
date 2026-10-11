@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Pomodoro Timer | Deep Work & Study Sessions</title>
+  <meta name="description" content="Clean, distraction-free Pomodoro study timer with audio alerts and session tracking. 100% free online tool.">
+  <style>
+    
+    :root {
+      --primary: #8b5cf6;
+      --primary-hover: #7c3aed;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #38bdf8;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    header { background: linear-gradient(135deg, #4c1d95 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+    .badge { display: inline-block; background: rgba(139, 92, 246, 0.2); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+    textarea, input[type='text'], input[type='number'], select { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-bottom: 14px; }
+    textarea:focus, input:focus, select:focus { border-color: var(--primary); }
+    .btn { background: var(--primary); color: #fff; border: none; padding: 12px 18px; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .btn-secondary { background: #334155; color: #cbd5e1; }
+    .btn-secondary:hover { background: #475569; }
+    .btn-success { background: var(--success); }
+    .btn-success:hover { background: #059669; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .home-link { display: inline-flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 0.85rem; text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+    .home-link:hover { color: #c084fc; }
+    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #c084fc; }
+    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
+    .info-card li { margin-bottom: 6px; }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+
+    .timer-circle { text-align: center; margin: 30px 0; }
+    .time-display { font-size: 4.5rem; font-weight: 900; letter-spacing: -2px; color: #c084fc; font-variant-numeric: tabular-nums; }
+    .mode-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
+    .mode-tab { background: #0f172a; border: 1px solid var(--border); color: #cbd5e1; padding: 8px 18px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+    .mode-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .stats-row { display: flex; justify-content: space-around; background: #0f172a; padding: 14px; border-radius: 10px; margin-top: 24px; border: 1px solid var(--border); }
+    .stat-item { text-align: center; }
+    .stat-val { font-size: 1.4rem; font-weight: 800; color: #fff; }
+    .stat-lbl { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">⏱️ 100% Free • High-Performance Study Clock</div>
+    <h1>Focus Pomodoro Study Timer</h1>
+    <p>Boost your productivity with the proven 25-minute deep focus study technique.</p>
+  </header>
+  <div class="container">
+    <a href="index.html" class="home-link">← Back to FastTools Hub</a>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <div class="tool-box">
+      <div class="mode-tabs">
+        <button class="mode-tab active" onclick="setMode(25, this)">Focus (25m)</button>
+        <button class="mode-tab" onclick="setMode(5, this)">Short Break (5m)</button>
+        <button class="mode-tab" onclick="setMode(15, this)">Long Break (15m)</button>
+      </div>
+      <div class="timer-circle">
+        <div class="time-display" id="timer">25:00</div>
+      </div>
+      <div style="display:flex; justify-content:center; gap:12px;">
+        <button class="btn" id="startBtn" onclick="toggleTimer()" style="font-size:1.1rem; padding:14px 36px;">▶ Start</button>
+        <button class="btn btn-secondary" onclick="resetTimer()" style="font-size:1.1rem; padding:14px 20px;">🔄 Reset</button>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-val" id="completedCount">0</div>
+          <div class="stat-lbl">Sessions Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val" id="totalMinutes">0m</div>
+          <div class="stat-lbl">Total Focus Time</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>🍅 The Pomodoro Blueprint</h3>
+      <ul>
+        <li>1 Pomodoro = <strong>25 minutes</strong> of pure, zero-interruption study focus.</li>
+        <li>Follow every sprint with a <strong>5-minute rest</strong> (stretch, drink water, breathe).</li>
+        <li>After 4 sprints, reward yourself with a <strong>15–30 minute long break</strong>.</li>
+      </ul>
+    </div>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
+  </div>
+  <script>
+    let duration = 25 * 60;
+    let timeLeft = duration;
+    let timerId = null;
+    let completed = 0;
+    let totalSecs = 0;
+
+    function playBeep() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(880, ctx.currentTime);
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.5);
+      } catch(e) {}
+    }
+
+    function updateDisplay() {
+      const m = Math.floor(timeLeft / 60);
+      const s = timeLeft % 60;
+      document.getElementById('timer').innerText = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      document.title = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s + ' - Focus Timer';
+    }
+
+    function toggleTimer() {
+      if (timerId) {
+        clearInterval(timerId);
+        timerId = null;
+        document.getElementById('startBtn').innerText = '▶ Resume';
+      } else {
+        document.getElementById('startBtn').innerText = '⏸ Pause';
+        timerId = setInterval(() => {
+          if (timeLeft > 0) {
+            timeLeft--;
+            totalSecs++;
+            updateDisplay();
+          } else {
+            clearInterval(timerId);
+            timerId = null;
+            playBeep();
+            completed++;
+            document.getElementById('completedCount').innerText = completed;
+            document.getElementById('totalMinutes').innerText = Math.round(totalSecs / 60) + 'm';
+            alert('🎉 Great job! Session complete!');
+            resetTimer();
+          }
+        }, 1000);
+      }
+    }
+
+    function resetTimer() {
+      if (timerId) clearInterval(timerId);
+      timerId = null;
+      timeLeft = duration;
+      document.getElementById('startBtn').innerText = '▶ Start';
+      updateDisplay();
+    }
+
+    function setMode(mins, btn) {
+      document.querySelectorAll('.mode-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      duration = mins * 60;
+      resetTimer();
+    }
+  </script>
+</body>
+</html>
