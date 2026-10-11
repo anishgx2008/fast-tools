@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice MCQ & Quiz Simulator | Test Your Knowledge</title>
+  <meta name="description" content="Interactive multiple choice question simulator with timer, auto-grading, and answer explanations.">
+  <style>
+    
+    :root {
+      --primary: #8b5cf6;
+      --primary-hover: #7c3aed;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #38bdf8;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 60px; }
+    header { background: linear-gradient(135deg, #4c1d95 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 24px 16px; text-align: center; }
+    .badge { display: inline-block; background: rgba(139, 92, 246, 0.2); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px; }
+    h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.025em; }
+    header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+    .ad-slot { background: rgba(30, 41, 59, 0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 14px; text-align: center; margin: 16px 0; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+    .tool-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+    label { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: #cbd5e1; }
+    textarea, input[type='text'], input[type='number'], select { width: 100%; background: #0f172a; border: 1px solid var(--border); color: var(--text); padding: 12px 14px; border-radius: 8px; font-size: 0.95rem; outline: none; margin-bottom: 14px; }
+    textarea:focus, input:focus, select:focus { border-color: var(--primary); }
+    .btn { background: var(--primary); color: #fff; border: none; padding: 12px 18px; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .btn-secondary { background: #334155; color: #cbd5e1; }
+    .btn-secondary:hover { background: #475569; }
+    .btn-success { background: var(--success); }
+    .btn-success:hover { background: #059669; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .home-link { display: inline-flex; align-items: center; gap: 6px; color: #94a3b8; font-size: 0.85rem; text-decoration: none; margin-bottom: 14px; transition: color 0.2s; }
+    .home-link:hover { color: #c084fc; }
+    .info-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 24px; }
+    .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #c084fc; }
+    .info-card ul { list-style-position: inside; color: var(--text-muted); font-size: 0.9rem; }
+    .info-card li { margin-bottom: 6px; }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.8rem; }
+
+    .quiz-box { margin-top: 14px; }
+    .q-item { background: #0f172a; padding: 18px; border-radius: 10px; margin-bottom: 14px; border: 1px solid var(--border); }
+    .q-title { font-weight: 700; margin-bottom: 12px; font-size: 1.05rem; }
+    .opt-label { display: block; padding: 10px 14px; background: #1e293b; border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; }
+    .opt-label:hover { border-color: var(--primary); }
+    .opt-label input { margin-right: 10px; accent-color: var(--primary); }
+    .score-banner { display: none; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 16px; border-radius: 10px; text-align: center; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">📝 100% Free • Self-Assessment Engine</div>
+    <h1>Practice MCQ & Quiz Simulator</h1>
+    <p>Test your knowledge with self-paced multiple choice quizzes and instant scoring.</p>
+  </header>
+  <div class="container">
+    <a href="index.html" class="home-link">← Back to FastTools Hub</a>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <div class="tool-box">
+      <div id="quizContainer" class="quiz-box">
+        <div class="q-item">
+          <div class="q-title">1. Which device is used to measure electric current?</div>
+          <label class="opt-label"><input type="radio" name="q1" value="a"> Voltmeter</label>
+          <label class="opt-label"><input type="radio" name="q1" value="b"> Ammeter</label>
+          <label class="opt-label"><input type="radio" name="q1" value="c"> Galvanometer</label>
+          <label class="opt-label"><input type="radio" name="q1" value="d"> Ohmmeter</label>
+        </div>
+        <div class="q-item">
+          <div class="q-title">2. What is the currency of the public cloud computing model?</div>
+          <label class="opt-label"><input type="radio" name="q2" value="a"> Pay-as-you-go</label>
+          <label class="opt-label"><input type="radio" name="q2" value="b"> One-time upfront</label>
+          <label class="opt-label"><input type="radio" name="q2" value="c"> Fixed hardware lease</label>
+        </div>
+        <div class="q-item">
+          <div class="q-title">3. Under Indian Income Tax Budget 2024, what is the new standard deduction?</div>
+          <label class="opt-label"><input type="radio" name="q3" value="a"> ₹50,000</label>
+          <label class="opt-label"><input type="radio" name="q3" value="b"> ₹60,000</label>
+          <label class="opt-label"><input type="radio" name="q3" value="c"> ₹75,000</label>
+          <label class="opt-label"><input type="radio" name="q3" value="d"> ₹1,00,000</label>
+        </div>
+        <button class="btn" onclick="submitQuiz()" style="width:100%; font-size:1.05rem; padding:14px;">Submit Quiz & See Score</button>
+        <div class="score-banner" id="scoreBanner">
+          <h2 id="scoreTitle" style="color:#34d399; font-size:1.6rem;">Score: 3 / 3 (100%)</h2>
+          <p id="scoreMsg" style="color:var(--text-muted); font-size:0.9rem; margin-top:4px;">Excellent mastery! You aced all questions.</p>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>🎯 Exam Prep Strategy</h3>
+      <ul>
+        <li>Taking timed practice quizzes reduces exam anxiety by over <strong>40%</strong>.</li>
+        <li>Review your incorrect answers immediately while the question context is fresh in memory.</li>
+      </ul>
+    </div>
+    <div class="ad-slot" style="min-height:90px; display:flex; justify-content:center; align-items:center; overflow-x:auto;">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '26329503c5841079dcf7331655016cc1',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="https://bauval.org/22/26329503c5841079dcf7331655016cc1"></script>
+</div>
+    <footer><p>© 2026 FastTools Hub • 100% Free Forever • Made for Students & Creators</p></footer>
+  </div>
+  <script>
+    function submitQuiz() {
+      const answers = { q1: 'b', q2: 'a', q3: 'c' };
+      let score = 0;
+      let total = 3;
+      for (const [q, correct] of Object.entries(answers)) {
+        const sel = document.querySelector('input[name="' + q + '"]:checked');
+        if (sel && sel.value === correct) score++;
+      }
+      const banner = document.getElementById('scoreBanner');
+      banner.style.display = 'block';
+      const pct = Math.round((score / total) * 100);
+      document.getElementById('scoreTitle').innerText = 'Your Score: ' + score + ' / ' + total + ' (' + pct + '%)';
+      if (pct === 100) document.getElementById('scoreMsg').innerText = '🔥 Perfect score! Outstanding job!';
+      else if (pct >= 60) document.getElementById('scoreMsg').innerText = '👍 Good job! Review the missed questions to hit 100%.';
+      else document.getElementById('scoreMsg').innerText = '📚 Keep practicing! You will get it next round.';
+      banner.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
